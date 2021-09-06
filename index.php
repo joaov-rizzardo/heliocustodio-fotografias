@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fotográfo</title>
 
+    <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -20,12 +21,19 @@
 </head>
 
 <body>
+    <div class="modal-galeria">
+    <span id="botao-close">&times;</span>
+        <div class="conteudo-modal">
+            <img id="modal-imagem" src="img/foto1.jpg" alt="">
+        </div>
+        
+    </div>
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top" id="navegacao">
+        <nav class="navbar navbar-expand-lg " id="navegacao">
             <div class="container">
-                <a id="nome-nav" class="navbar-brand" href="#inicio">Fotográfia</a>
+                <a id="nome-nav" class="navbar-brand" href="#inicio"><img width="200px" src="img/logo.png" alt=""></a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target1">
-                    <i class="fas fa-bars text-white"></i>
+                    <i class="fas fa-bars text-black"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="nav-target1">
                     <ul class="navbar-nav ml-auto">
@@ -47,21 +55,26 @@
         </nav>
     </header>
 
+
     <section id="fotos-destaque">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/foto1.jpg">
+                    <img class="imagens" src="img/foto1.jpg">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="img/foto2.jpg">
+                    <img class="imagens"  src="img/foto2.jpg">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="img/foto3.jpg">
+                    <img class="imagens"  src="img/foto3.jpg">
                 </div>
-                
+
+                <div class="carousel-item">
+                    <img class="imagens"  src="img/foto4.jpg">
+                </div>
+
             </div>
             <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -72,6 +85,13 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+    </section>
+
+    <section id="galeria">
+        <div class="container">
+            <h4>Galeria</h4>
+        </div>
+
     </section>
 </body>
 
