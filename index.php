@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotográfo</title>
+    <title>Hélio Custódio - Fotografias</title>
 
     <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" href="css/estilo.css">
@@ -22,11 +22,11 @@
 
 <body>
     <div class="modal-galeria">
-    <span id="botao-close">&times;</span>
+        <span id="botao-close">&times;</span>
         <div class="conteudo-modal">
             <img id="modal-imagem" src="img/foto1.jpg" alt="">
         </div>
-        
+
     </div>
     <header>
         <nav class="navbar navbar-expand-lg " id="navegacao">
@@ -39,23 +39,34 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#sobreMim">Sobre mim</a>
+                            <a class="nav-link" href="#sobreMim">Galeria</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#projetos">Projetos</a>
+                            <a class="nav-link" href="#projetos">Sobre o fotógrafo</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato"><i style="font-size: 25px;" class="fab fa-instagram"></i></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato"><i style="font-size: 25px;" class="fab fa-facebook"></i></a>
+                        </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link" href="#contato"><i style="font-size: 25px;" class="fab fa-whatsapp"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
-
+    
     <section id="fotos-destaque">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
@@ -64,15 +75,15 @@
                 </div>
 
                 <div class="carousel-item">
-                    <img class="imagens"  src="img/foto2.jpg">
+                    <img class="imagens" src="img/foto2.jpg">
                 </div>
 
                 <div class="carousel-item">
-                    <img class="imagens"  src="img/foto3.jpg">
+                    <img class="imagens" src="img/foto3.jpg">
                 </div>
 
                 <div class="carousel-item">
-                    <img class="imagens"  src="img/foto4.jpg">
+                    <img class="imagens" src="img/foto4.jpg">
                 </div>
 
             </div>
@@ -88,9 +99,102 @@
     </section>
 
     <section id="galeria">
-        <div class="container">
-            <h4>Galeria</h4>
+        <div class="d-flex justify-content-center mt-3">
+            <ul>
+                <li><a href="">TUDO</a></li>
+                <li>|</li>
+                <li><a href="">CASAMENTO</a></li>
+                <li>|</li>
+                <li><a href="">ENSAIOS</a></li>
+            </ul>
         </div>
+        
+        <div class="d-flex justify-content-around flex-wrap mt-3 imagem-galeria">
+            <div class="card-img">
+                <img class="imagens" src="img/foto1.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto2.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto3.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto4.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto1.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto2.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto3.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto4.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto1.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto2.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto3.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto4.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto1.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto2.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto3.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto4.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto1.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto2.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto3.jpg" alt="">
+            </div>
+
+            <div class="card-img">
+                <img class="imagens" src="img/foto4.jpg" alt="">
+            </div>
+   
+        </div>
+
+
+
+
 
     </section>
 </body>
