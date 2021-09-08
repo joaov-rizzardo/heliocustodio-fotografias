@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/fundo.jpg");
+}
+
+#formulario {
+  width: 35vw;
+  height: 50vh;
+  background: rgba(211, 211, 211, 0.7);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 992px) {
+  #formulario {
+    width: 75vw;
+  }
+}
+#formulario form {
+  width: 85%;
+  opacity: 1;
+}
+#formulario form img {
+  opacity: 1;
+  width: 85%;
+  margin-left: 25px;
+}
+#formulario form input, #formulario form button {
+  margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=login.css.map */

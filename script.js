@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //Posiciona a imagem de acordo com o tamanho do menu
     alturaMenu = $('nav').innerHeight()
 
     alturaImg = $('#fotos-destaque img').innerHeight()
@@ -6,7 +7,7 @@ $(document).ready(function () {
     $('#fotos-destaque img').css("height", alturaImg - alturaMenu)
 
 })
-
+//Abre o modal da imagem
     let imagens = document.querySelectorAll('.imagens')
     let modal = document.querySelector('.modal-galeria')
     let imagemModal = document.querySelector('#modal-imagem')
