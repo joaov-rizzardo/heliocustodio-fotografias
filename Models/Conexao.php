@@ -1,7 +1,7 @@
 <?php
     class Conexao{
         private $host = 'localhost';
-        private $dbname = 'db_biblioteca';
+        private $dbname = 'db_fotografo';
         private $user = 'root';
         private $senha = '';
 
