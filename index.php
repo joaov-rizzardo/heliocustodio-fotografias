@@ -1,3 +1,8 @@
+<?php 
+require 'Models/Foto.php';
+require 'Models/Conexao.php';
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,10 +29,10 @@
     <div class="modal-galeria">
         <span id="botao-close">&times;</span>
         <div class="conteudo-modal">
-            <img id="modal-imagem" src="img/foto1.jpg" alt="">
+            <img id="modal-imagem" src="" alt="">
         </div>
-
     </div>
+
     <header>
         <nav class="navbar navbar-expand-lg " id="navegacao">
             <div class="container">
@@ -70,22 +75,30 @@
     <section id="fotos-destaque">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
+                <?php
+                    $conexao = new Conexao();
+                    $foto = new Foto($conexao);
+                    $fotos = $foto->recuperaDestaques();
+                ?>
                 <div class="carousel-item active">
-                    <img class="imagens" src="img/foto1.jpg">
+                    <img class="imagens" src="img/<?=$fotos[0]->nome?>">
                 </div>
+
+                <?php
+                    $i = 0;
+                    foreach($fotos as $foto){
+                        if($i == 0){
+                            $i++;
+                            continue;
+                        }
+                ?>
 
                 <div class="carousel-item">
-                    <img class="imagens" src="img/foto2.jpg">
+                    <img class="imagens" src="img/<?=$foto->nome?>">
                 </div>
+                <?php } ?>
 
-                <div class="carousel-item">
-                    <img class="imagens" src="img/foto3.jpg">
-                </div>
-
-                <div class="carousel-item">
-                    <img class="imagens" src="img/foto4.jpg">
-                </div>
-
+                
             </div>
             <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -101,101 +114,31 @@
     <section id="galeria">
         <div class="d-flex justify-content-center mt-3">
             <ul>
-                <li><a href="">TUDO</a></li>
+                <li><a onclick="recuperaFotos()" href="#">TUDO</a></li>
                 <li>|</li>
-                <li><a href="">CASAMENTO</a></li>
+                <li><a onclick="recuperaFotos('casamento')" href="#">CASAMENTO</a></li>
                 <li>|</li>
-                <li><a href="">ENSAIOS</a></li>
+                <li><a onclick="recuperaFotos('ensaios')" href="#">ENSAIOS</a></li>
+                <li>|</li>
+                <li><a onclick="recuperaFotos('gastronomicas')" href="#">GASTRÔNOMICAS</a></li>
             </ul>
         </div>
         
-        <div class="d-flex justify-content-around flex-wrap mt-3 imagem-galeria">
-            <div class="card-img">
-                <img class="imagens" src="img/foto1.jpg" alt="">
-            </div>
+        <div id="fotos" class="d-flex justify-content-around flex-wrap mt-3 imagem-galeria">
+            <?php
+                $conexao = new Conexao();
+                $foto = new Foto($conexao);
+                $fotos = $foto->recuperaTodasFotos();
 
+                foreach($fotos as $foto){
+            ?>
             <div class="card-img">
-                <img class="imagens" src="img/foto2.jpg" alt="">
+                <img class="imagens" src="img/<?=$foto->nome?>" alt="">
             </div>
+            <?php } ?>
 
-            <div class="card-img">
-                <img class="imagens" src="img/foto3.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto4.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto1.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto2.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto3.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto4.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto1.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto2.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto3.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto4.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto1.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto2.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto3.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto4.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto1.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto2.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto3.jpg" alt="">
-            </div>
-
-            <div class="card-img">
-                <img class="imagens" src="img/foto4.jpg" alt="">
-            </div>
-   
         </div>
-
-
-
-
-
+        
     </section>
 </body>
 

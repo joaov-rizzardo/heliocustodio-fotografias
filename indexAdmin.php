@@ -1,3 +1,8 @@
+<?php
+require 'Models/Foto.php';
+require 'Models/Conexao.php';
+require 'Controllers/ValidaAuth.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,7 +29,7 @@
     <header>
         <nav>
             <i id="hamburguer" class="fas fa-bars"></i>
-            <a style="float: right;" href="">Sair</a>
+            <a style="float: right;" href="Controllers/AuthController.php?acao=logoff">Sair <i class="fas fa-sign-out-alt"></i></a>
             <div style="clear: both;"></div>
         </nav>
     </header>
@@ -32,23 +37,71 @@
         <div id="menu-logo">
             <img src="img/logo.png" width="85%" alt="">
         </div>
-        
-        <div class="item-menu">
-            <a href="">Gerenciar fotos</a>
+
+        <div class="item-menu" id="fotosAdmin">
+            <a href="#">Gerenciar fotos</a>
         </div>
 
         <div class="item-menu">
             <a href="">Adicionar novas fotos</a>
         </div>
-    
-    
+
+
     </nav>
 
     <section id="conteudo">
-        <button id="clique">Clique aqui</button>
-        <div id="ajax">
+        <div class="ml-5 mt-3">
+            <div>
+                <h4>Adicionar novas fotos</h4>
+                <form action="Controllers/FotoController.php?acao=enviar" method="post" enctype="multipart/form-data">
+                    <select class="btn btn-light" name="categoria" id="">
+                        <option value="">-- Selecione a categoria --</option>
+                        <option value="casamento">Casamento</option>
+                        <option value="ensaios">Ensaios</option>
+                        <option value="gastronomicas">Gastrônomicas</option>
+                    </select>
+                    <input multiple="multiple" accept=".png, .jpg" name="foto[]" id="foto" type="file">
+                    <label class="btn btn-primary" for="foto"><i class="fas fa-plus"></i></label>
+                    <button type="submit" id="enviar" class="btn btn-secondary">Enviar</button>
+                </form>
+                <?php if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
+                    <div class="text-danger">
+                        Uma foto com esse mesmo nome já existe (<?= $_GET['foto'] ?>)
+                    </div>
+                <?php } ?>
+                <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == 1) { ?>
+                    <div class="text-success">
+                        Fotos adicionadas com sucesso
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+        <div id="fotos">
+            <?php
+            $conexao = new Conexao();
+            $foto = new Foto($conexao);
+            $fotos = $foto->recuperaTodasFotos();
+
+            foreach ($fotos as $foto) {
+            ?>
+                <div id="foto<?=$foto->id?>" class="card-fotos">
+                    <img src="img/<?= $foto->nome ?>" alt="">
+    
+                    <?php if ($foto->destaque == 0) { ?>
+                            <button id="destaque<?=$foto->id?>" onclick="adicionarDestaque(<?= $foto->id ?>)" class="btn btn-primary">Adicionar aos destaques <i class="fas fa-plus"></i></button>
+                        <?php } else if ($foto->destaque == 1) { ?>
+                            <button id="destaque<?=$foto->id?>" onclick="removerDestaque(<?= $foto->id ?>)" class="btn btn-primary">Remover dos destaques <i class="fas fa-times"></i></button>
+                        <?php } ?>
+                    
+        
+                    <button onclick="excluirFoto(<?=$foto->id?>)" class="btn btn-danger">Excluir foto <i class="fas fa-trash"></i></button>
+                </div>
+
+            <?php } ?>
+
 
         </div>
+
     </section>
 </body>
 

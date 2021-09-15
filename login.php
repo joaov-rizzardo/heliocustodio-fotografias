@@ -23,7 +23,7 @@
 <body>
     <section class="d-flex justify-content-center align-items-center">
         <div id="formulario">
-            <form action="Controllers/AuthController.php" method="post">
+            <form action="Controllers/AuthController.php?acao=logar" method="post">
                 <img src="img/logo.png" alt="">
                 <input name="login" class="form-control" type="text" placeholder="Login">
                 <input name="senha" class="form-control" type="password" placeholder="Senha">

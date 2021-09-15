@@ -47,6 +47,17 @@ header{
     width: 100vw;
     background: url('../img/fundo.jpg');
     z-index: 1;
+
+    a{
+        color: black;
+        line-height: 50px;
+        margin-right: 30px;
+
+        &:hover{
+            color: black;
+            text-decoration: none;
+        }
+    }
 }
 
 a{
@@ -85,4 +96,44 @@ a{
 #menu-logo{
     background: #d3d3d3;
     border-bottom: 1px solid gray;
+}
+
+#fotos{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card-fotos{
+    width: 250px;
+    height: 400px;
+    margin: 10px;
+
+    img{
+        width: 250px;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 10px;
+    }
+
+    button{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+input[type='file']{
+    display: none;
+}
+
+#enviar{
+    position: relative;
+    bottom: 3px;
+}
+
+select{
+    position: relative;
+    bottom: 3px;
 }
