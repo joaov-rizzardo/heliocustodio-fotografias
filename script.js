@@ -1,3 +1,4 @@
+//Função para exibição do modal
 function modal(){
     let imagens = document.querySelectorAll('.imagens')
     //let modal = document.querySelector('.modal-galeria')

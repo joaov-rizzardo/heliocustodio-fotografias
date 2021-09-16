@@ -59,6 +59,7 @@ require 'Controllers/ValidaAuth.php';
                         <option value="casamento">Casamento</option>
                         <option value="ensaios">Ensaios</option>
                         <option value="gastronomicas">Gastrônomicas</option>
+                        <option value="paisagens">Paisagens</option>
                     </select>
                     <input multiple="multiple" accept=".png, .jpg" name="foto[]" id="foto" type="file">
                     <label class="btn btn-primary" for="foto"><i class="fas fa-plus"></i></label>

@@ -121,6 +121,8 @@ require 'Models/Conexao.php';
                 <li><a onclick="recuperaFotos('ensaios')" href="#">ENSAIOS</a></li>
                 <li>|</li>
                 <li><a onclick="recuperaFotos('gastronomicas')" href="#">GASTRÔNOMICAS</a></li>
+                <li>|</li>
+                <li><a onclick="recuperaFotos('paisagens')" href="#">PAISAGENS</a></li>
             </ul>
         </div>
         
